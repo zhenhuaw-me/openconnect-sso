@@ -105,6 +105,13 @@ def create_argparser():
     )
 
     parser.add_argument(
+        "--no-totp",
+        help="Don't prompt for TOTP",
+        action="store_true",
+        default=False,
+    )
+
+    parser.add_argument(
         "openconnect_args",
         help="Arguments passed to openconnect",
         action=StoreOpenConnectArgs,

@@ -118,7 +118,7 @@ async def _run(args, cfg):
         credentials.password = getpass.getpass(prompt=f"Password ({args.user}): ")
         cfg.credentials = credentials
 
-    if credentials and not credentials.totp:
+    if credentials and not credentials.totp and not args.no_totp:
         credentials.totp = getpass.getpass(
             prompt=f"TOTP secret (leave blank if not required) ({args.user}): "
         )
